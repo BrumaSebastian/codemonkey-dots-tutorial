@@ -19,7 +19,6 @@ public class SelectedAuthoring : MonoBehaviour
             SetComponentEnabled<Selected>(entity, false);
         }
     }
-
 }
 
 public struct Selected : IComponentData, IEnableableComponent
