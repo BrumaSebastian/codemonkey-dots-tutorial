@@ -12,6 +12,14 @@ PrefabInstance:
       propertyPath: faction
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -928516051676200838, guid: cddc41cb7bd260143a454905f129680e, type: 3}
+      propertyPath: range
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -928516051676200838, guid: cddc41cb7bd260143a454905f129680e, type: 3}
+      propertyPath: targetFaction
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3581503485043240482, guid: cddc41cb7bd260143a454905f129680e, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
