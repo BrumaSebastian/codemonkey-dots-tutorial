@@ -37,7 +37,6 @@ partial struct UnitMoverSystem : ISystem
     }
 }
 
-
 [BurstCompile]
 public partial struct UnitMoverJob : IJobEntity
 {
