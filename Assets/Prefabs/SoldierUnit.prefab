@@ -103,6 +103,10 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -928516051676200838, guid: cddc41cb7bd260143a454905f129680e, type: 3}
+      propertyPath: timerMax
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -928516051676200838, guid: cddc41cb7bd260143a454905f129680e, type: 3}
       propertyPath: targetFaction
       value: 1
       objectReference: {fileID: 0}
@@ -218,7 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d308d84f67cc228429609718a1bd0be1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerMax: 5
+  timerMax: 1
 --- !u!4 &8412199577990820569 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4425408276567095503, guid: cddc41cb7bd260143a454905f129680e, type: 3}
