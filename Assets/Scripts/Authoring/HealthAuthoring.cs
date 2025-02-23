@@ -4,6 +4,7 @@ using UnityEngine;
 public class HealthAuthoring : MonoBehaviour
 {
     public int healtAmount;
+    public int healtAmountMax;
 
     public class Baker : Baker<HealthAuthoring>
     {
@@ -12,7 +13,9 @@ public class HealthAuthoring : MonoBehaviour
             Entity entity = GetEntity(TransformUsageFlags.Dynamic);
             AddComponent(entity, new Health()
             {
-                healthAmount = authoring.healtAmount
+                healthAmount = authoring.healtAmount,
+                healthAmountMax = authoring.healtAmountMax,
+                onHealthChanged = true
             });
         }
     }
@@ -21,4 +24,6 @@ public class HealthAuthoring : MonoBehaviour
 public struct Health : IComponentData
 {
     public int healthAmount;
+    public int healthAmountMax;
+    public bool onHealthChanged;
 }

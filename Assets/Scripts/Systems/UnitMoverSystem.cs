@@ -6,6 +6,8 @@ using Unity.Transforms;
 
 partial struct UnitMoverSystem : ISystem
 {
+    public const float REACHED_TARGET_POSITION_DISTANCE_SQ = 2f;
+
     [BurstCompile]
     public void OnUpdate(ref SystemState state)
     {
@@ -15,25 +17,6 @@ partial struct UnitMoverSystem : ISystem
         };
 
         unitMoverJobs.ScheduleParallel();
-
-        //foreach ((var localTransform, var unitMover, var physicsVelocity) 
-        //    in SystemAPI.Query<
-        //        RefRW<LocalTransform>,
-        //        RefRO<UnitMover>,
-        //        RefRW<PhysicsVelocity>>())
-        //{
-        //    float3 targetPosition = MouseWorldPosition.Instance.GetPosition();
-        //    float3 moveDirection = unitMover.ValueRO.targetPosition - localTransform.ValueRO.Position;
-        //    moveDirection = math.normalize(moveDirection);
-
-        //    localTransform.ValueRW.Rotation = math.slerp(
-        //        localTransform.ValueRO.Rotation, 
-        //        quaternion.LookRotation(moveDirection, math.up()), 
-        //        SystemAPI.Time.DeltaTime * unitMover.ValueRO.rotationSpeed);
-        //    physicsVelocity.ValueRW.Linear = moveDirection * unitMover.ValueRO.moveSpeed;
-        //    physicsVelocity.ValueRW.Angular = float3.zero;
-        //    //localTransform.ValueRW.Position += moveSpeed.ValueRO.value * SystemAPI.Time.DeltaTime * moveDirection;
-        //}
     }
 }
 
@@ -46,9 +29,7 @@ public partial struct UnitMoverJob : IJobEntity
     {
         float3 moveDirection = unitMover.targetPosition - localTransform.Position;
 
-        float reachedTargetDistanceSq = 2f;
-
-        if (math.lengthsq(moveDirection) < reachedTargetDistanceSq)
+        if (math.lengthsq(moveDirection) <= UnitMoverSystem.REACHED_TARGET_POSITION_DISTANCE_SQ)
         {
             physicsVelocity.Linear = float3.zero;
             physicsVelocity.Angular = float3.zero;
