@@ -45,7 +45,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1661287033017474663, guid: cddc41cb7bd260143a454905f129680e, type: 3}
       propertyPath: healtAmount
-      value: 99999999
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: -928516051676200838, guid: cddc41cb7bd260143a454905f129680e, type: 3}
       propertyPath: range
