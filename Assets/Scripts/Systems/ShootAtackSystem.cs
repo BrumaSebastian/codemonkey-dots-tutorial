@@ -15,7 +15,8 @@ partial struct ShootAtackSystem : ISystem
                 RefRW<LocalTransform>, 
                 RefRW<ShootAtack>, 
                 RefRO<Target>,
-                RefRW<UnitMover>>())
+                RefRW<UnitMover>>()
+                .WithDisabled<MoveOverride>())
         {
             if (target.ValueRO.targetEntity == Entity.Null)
             {

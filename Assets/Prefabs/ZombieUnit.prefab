@@ -47,9 +47,13 @@ PrefabInstance:
       propertyPath: healtAmount
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: -1661287033017474663, guid: cddc41cb7bd260143a454905f129680e, type: 3}
+      propertyPath: healtAmountMax
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: -928516051676200838, guid: cddc41cb7bd260143a454905f129680e, type: 3}
       propertyPath: range
-      value: 5
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: -928516051676200838, guid: cddc41cb7bd260143a454905f129680e, type: 3}
       propertyPath: targetFaction
@@ -124,6 +128,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6060784253951711072, guid: cddc41cb7bd260143a454905f129680e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7030090325842537202}
+    - targetCorrespondingSourceObject: {fileID: 6060784253951711072, guid: cddc41cb7bd260143a454905f129680e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2536718833896261236}
   m_SourcePrefab: {fileID: 100100000, guid: cddc41cb7bd260143a454905f129680e, type: 3}
 --- !u!1 &3924058214929931650 stripped
 GameObject:
@@ -155,6 +162,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPositionTransform: {fileID: 5270807272527449985}
+--- !u!114 &2536718833896261236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3924058214929931650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a45509f0d9b1d4249b3c1af26519ce50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerMax: 0.5
+  damageAmount: 5
+  colliderSize: 0.5
 --- !u!4 &6846316324421005869 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4425408276567095503, guid: cddc41cb7bd260143a454905f129680e, type: 3}
